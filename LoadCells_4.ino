@@ -84,10 +84,10 @@ void setup() {
   byte loadcell_3_rdy = 0;
   byte loadcell_4_rdy = 0;
   while ((loadcell_1_rdy + loadcell_2_rdy + loadcell_3_rdy + loadcell_4_rdy) < 4) { //run startup, stabilization and tare, both modules simultaniously
-    if (!loadcell_1_rdy) loadcell_1_rdy = LoadCell_1.start(stabilizingtime, _tare);
-    if (!loadcell_2_rdy) loadcell_2_rdy = LoadCell_2.start(stabilizingtime, _tare);
-    if (!loadcell_3_rdy) loadcell_3_rdy = LoadCell_3.start(stabilizingtime, _tare);
-    if (!loadcell_4_rdy) loadcell_4_rdy = LoadCell_4.start(stabilizingtime, _tare);
+    if (!loadcell_1_rdy) loadcell_1_rdy = LoadCell_1.startMultiple(stabilizingtime, _tare);
+    if (!loadcell_2_rdy) loadcell_2_rdy = LoadCell_2.startMultiple(stabilizingtime, _tare);
+    if (!loadcell_3_rdy) loadcell_3_rdy = LoadCell_3.startMultiple(stabilizingtime, _tare);
+    if (!loadcell_4_rdy) loadcell_4_rdy = LoadCell_4.startMultiple(stabilizingtime, _tare);
   }
   
 //  if (LoadCell_1.getTareTimeoutFlag()) {
